@@ -1,5 +1,8 @@
-input = input("What is the answer to the question?")
+answer = input("What is the answer to the question?").lower()
 
-match input:
-    case "42":
-        print("Test")
+match answer:
+    case "42" | "forty two" | "forty-two":
+        print("Yes")
+
+    case _:
+        print("No")
