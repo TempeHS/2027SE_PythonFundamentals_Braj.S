@@ -7,15 +7,14 @@ def main():
     while paid_amount < coke_cost:
         p_amount = int(input("Insert a coin: "))
         if p_amount != 25 and p_amount != 10 and p_amount != 5:
-            print("Invalid try again! ")
+            print("Amount Due:", 50 - paid_amount)
         else:
             paid_amount += p_amount
-            if paid_amount >= 0:
-                print("Amount due:", remaining - paid_amount)
-            else:
-                change = coke_cost - paid_amount
-                if change < 0:
-                    print("Change owed:", change)
+            remaining = coke_cost - paid_amount
+            if remaining > 0:
+                print("Amount due:", 50 - paid_amount)
+    else:
+        print("Change Owed:", (amount_due - paid_amount) * -1)
 
 
 main()
